@@ -1,0 +1,68 @@
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords" content="TheCodeBoxed">
+	<meta name="author" content="TheCodeBoxed">
+	<meta name="theme-color" content="#121212">
+	<meta http-equiv="expires" content="0" />
+
+
+  <!-- Twitter cards metadatas -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{site.username}}">
+<meta name="twitter:creator" content="@{{site.username}}">
+{% if page.title %}
+  <meta name="twitter:title" content="{{ page.title }}">
+{% else %}
+  <meta name="twitter:title" content="{{ site.title }}">
+{% endif %}
+{% if page.url %}
+  <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+{% endif %}
+{% if page.description %}
+  <meta name="twitter:description" content="{{ page.description }}">
+{% else %}
+  <meta name="twitter:description" content="{{ site.description }}">
+{% endif %}
+  <meta name="twitter:image:src" content="{{ site.url }}{{site.baseurl}}public/{{ site.profile_img }}">
+
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}
+    {% else %}
+      {{ page.title }}
+    {% endif %}
+  </title>
+
+  {% if page.url and site.baseurl %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% endif %}
+
+  <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+
+  <!-- Stylesheets -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css" integrity="sha256-CuUPKpitgFmSNQuPDL5cEfPOOJT/+bwUlhfumDJ9CI4=" crossorigin="anonymous" /> -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ '/public/css/style1.css' | absolute_url }}" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="{{ '/public/css/style.css' | absolute_url }}" crossorigin="anonymous"/>
+
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ '/public/apple-touch-icon-precomposed.png' | absolute_url }}">
+  <link rel="shortcut icon" href="{{ '/public/favicon.ico' | absolute_url }}">
+
+  {% if site.google_analytics_id %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133856785-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{{ site.google_analytics_id }}');
+</script>
+
+  {% endif %}
+</head>

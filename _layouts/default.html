@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include sidebar.html %}
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+         <div class="home-four-style">
+
+
+       		<div class="container-fluid">
+       			<div class="row">
+              <div class="col-xl-12 col-sm-12 col-md-12 col-lg-12">
+       					<div class="main-right-area">
+
+                      {{ content }}
+
+
+
+
+                </div>
+
+                <br><br>
+
+
+    					</div>
+    				</div>
+    			</div>
+
+
+    		</div>
+
+        {% include footer.html %}
+    <script src="{{ site.baseurl }}/public/js/jquery-2.1.4.min.js"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ site.baseurl }}/public/js/dark-reader.js"></script>
+    <script>
+    if ($(".darkreader")[0]){
+     console.log("Darkreader Extension detected");
+} else {
+    DarkReader.setFetchMethod(window.fetch);
+    DarkReader.enable({
+      brightness: 100,
+      contrast: 90,
+      sepia: 10
+  })
+}
+  // // Enable when system color scheme is dark
+  // DarkReader.auto({
+  //     brightness: 100,
+  //     contrast: 90,
+  //     sepia: 10
+  // });
+  // //
+  // // // Stop watching for system color scheme
+  // DarkReader.auto(false);
+
+
+
+  </script>
+  </body>
+</html>

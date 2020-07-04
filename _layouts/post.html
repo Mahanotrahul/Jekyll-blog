@@ -1,0 +1,76 @@
+---
+layout: default
+---
+<style>
+    body {
+      text-align: justify;
+    }
+    .main-right-area li {
+      margin-left:20px;
+    }
+    h3 {
+      color: rgb(255, 220, 131);
+    }
+    .wrap {
+            margin:auto;
+            width:800px;
+            max-width:100%;
+        }
+
+</style>
+
+<div class="post-container">
+  <div class="post" style="margin-top: -150px;">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-date"><img src="{{ 'public/img/post_picture.png' | absolute_url }}" style="width: 35px; height:35px; margin-right: 5px;">
+      <!-- {{ page.date | date: "%B" }}
+      {% assign day = page.date | date: "%-d"  %}
+      {% case day %}
+        {% when '1' or '21' or '31' %}{{ day}}st,
+        {% when '2' or '22' %}{{ day}}nd,
+        {% when '3' or '23' %}{{ day}}rd,
+        {% else %}{{ day}}th,
+      {% endcase %}
+      {{ page.date | date: "%Y" }} -->
+      {% include date-format.html date=page.date %} &nbsp; / &nbsp;
+      <span class="social-share"><a href="http://twitter.com/intent/tweet?url={{site.url}}{{site.baseurl}}{{ page.url }}&text={{ page.title | url_escape }}&via={{ site.username }}" target="_blank" rel="noopener noreferrer" title="Share on twitter">share</a></span>
+    </span>
+
+
+    {{ content }}
+  </div>
+
+<div class="related">
+</div>
+  <!-- {% if site.related_posts.size >= 1 %}
+  <div class="related">
+    <h2>Related posts</h2>
+    <ul class="related-posts" style="margin-left:-10px;">
+      {% for post in site.related_posts limit:3 %}
+        <li>
+          <h3>
+            <a href="{{ site.baseurl }}{{ post.url }}">
+              {{ post.title }}
+              <small>{{ post.date | date_to_string }}</small>
+            </a>
+          </h3>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %} -->
+</div>
+<br><br>
+<div class="wrap">
+<div id="hyvor-talk-view" style=""></div>
+<script type="text/javascript">
+    var HYVOR_TALK_WEBSITE = 923; // DO NOT CHANGE THIS
+    var HYVOR_TALK_CONFIG = {
+        url: '{{ page.url | absolute_url }}',
+        id: '{{page.id}}'
+    };
+</script>
+<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+</div>
+
+{% include author_footer.html %}
