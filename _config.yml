@@ -6,7 +6,7 @@ username:            mahanotrahul
 profile_img:         Picture.png
 tagline:             ''
 description:         'Rahul Mahanot'
-baseurl:             'Jekyll-blog'
+baseurl:             '/Jekyll-blog/'
 paginate:            5
 permalink:           pretty
 
